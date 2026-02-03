@@ -7,9 +7,11 @@
     <list default="true" id="2bc4a01a-e65b-4665-b0f6-931718a446ea" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/aprendizado-python.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dia01_financeiro/calculadora_salario.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/python-exercicios/ex001.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/python-exercicios/ex002.py" afterDir="false" />
     </list>
@@ -119,7 +121,7 @@
       <option name="presentableId" value="Default" />
       <updated>1770130114033</updated>
       <workItem from="1770130115120" duration="5327000" />
-      <workItem from="1770143825149" duration="4322000" />
+      <workItem from="1770143825149" duration="4674000" />
     </task>
     <servers />
   </component>
