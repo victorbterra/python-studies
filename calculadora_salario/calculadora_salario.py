@@ -1,24 +1,19 @@
 from employees import employees
 
 
-isentionLimit = 2000.0
-lowTax = 0.10
-highTax = 0.20
+ISENTION_LIMIT = 2000.0
+LOW_TAX = 0.10
+HIGH_TAX = 0.20
 
+def create_user (name:str, salary:float)-> dict:
+    return {"name": name, "salary": salary}
 
 
 def calc_salary(value: float) -> float:
-    if value < isentionLimit :
-        return value-(value * lowTax)
+    if value < ISENTION_LIMIT :
+        return value-(value * LOW_TAX)
     else:
-        return value-(value * highTax)
-
-def add_employee():
-    new_employee = {
-        "name": entry_name,
-        "salary": liquid_salary,
-    }
-    return new_employee
+        return value-(value * HIGH_TAX)
 
 
 if __name__ == "__main__":
@@ -32,7 +27,7 @@ if __name__ == "__main__":
         try:
             gross_salary = float(entry_salary)
             liquid_salary = calc_salary(gross_salary)
-            employees.append(add_employee())
+            employees.append(create_user(entry_name, liquid_salary))
 
             print(f"{entry_name}, o seu salário líquido será de: R${liquid_salary:.2f} ")
 
@@ -40,4 +35,5 @@ if __name__ == "__main__":
             print("Por favor, digite um número válido ex.: 2300.50")
 
     for employee in employees:
-        print(f"Nome: {employee['name']}\nSalário: R$ {employee['salary']:.2f}")
+        print("========= LISTA DE FUNCIONÁRIOS =========")
+        print(f"Nome: {employee['name']}\nSalário: R$ {employee['salary']:.2f}\n=====================")
