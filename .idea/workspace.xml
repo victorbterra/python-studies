@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bc4a01a-e65b-4665-b0f6-931718a446ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Readme.MD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculadora_salario/employees.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculadora_salario/calculadora_salario.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculadora_salario/calculadora_salario.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,13 +78,13 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dia01_financeiro" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/calculadora_salario" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dia01_financeiro/calculadora_salario.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calculadora_salario/calculadora_salario.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -113,7 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1770130114033</updated>
       <workItem from="1770130115120" duration="5327000" />
-      <workItem from="1770143825149" duration="5166000" />
+      <workItem from="1770143825149" duration="8616000" />
     </task>
     <servers />
   </component>
@@ -121,7 +123,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/aprendizado_python$calculadora_salario.coverage" NAME="calculadora_salario Coverage Results" MODIFIED="1770147539801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dia01_financeiro" />
+    <SUITE FILE_PATH="coverage/aprendizado_python$calculadora_salario.coverage" NAME="calculadora_salario Coverage Results" MODIFIED="1770152498193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/calculadora_salario" />
     <SUITE FILE_PATH="coverage/aprendizado_python$main.coverage" NAME="main Coverage Results" MODIFIED="1770130473564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aprendizado_python$ex002.coverage" NAME="ex002 Coverage Results" MODIFIED="1770133000375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python-exercicios" />
   </component>
