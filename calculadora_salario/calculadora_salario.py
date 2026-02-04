@@ -1,24 +1,21 @@
-from employees import employees
+from mock.employees import employees
+from services.user_service import create_user
+from services.salary_service import calc_salary
+import json
 
 
-ISENTION_LIMIT = 2000.0
-LOW_TAX = 0.10
-HIGH_TAX = 0.20
+data_base = "./mock/db.json"
 
-def create_user (name:str, salary:float)-> dict:
-    return {"name": name, "salary": salary}
-
-
-def calc_salary(value: float) -> float:
-    if value < ISENTION_LIMIT :
-        return value-(value * LOW_TAX)
-    else:
-        return value-(value * HIGH_TAX)
-
+try:
+    with open(data_base, "r") as file:
+        employees = json.load(file)
+except FileNotFoundError:
+    employees = []
 
 if __name__ == "__main__":
 
     while True:
+
         entry_name = input("Digite o nome do funcionário (ou 'sair' para fechar):")
         if entry_name.lower() == "sair": break
 
@@ -29,11 +26,13 @@ if __name__ == "__main__":
             liquid_salary = calc_salary(gross_salary)
             employees.append(create_user(entry_name, liquid_salary))
 
+            with open(data_base, "w") as file:
+                json.dump(employees, file, indent=4)
+
             print(f"{entry_name}, o seu salário líquido será de: R${liquid_salary:.2f} ")
 
         except ValueError:
             print("Por favor, digite um número válido ex.: 2300.50")
-
+    print("========= LISTA DE FUNCIONÁRIOS =========")
     for employee in employees:
-        print("========= LISTA DE FUNCIONÁRIOS =========")
         print(f"Nome: {employee['name']}\nSalário: R$ {employee['salary']:.2f}\n=====================")
