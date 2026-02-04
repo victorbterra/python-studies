@@ -1,17 +1,7 @@
 [
     {
-        "name": "Victor",
-        "age": 32,
-        "liquid_salary": 1440.0
-    },
-    {
-        "name": "Letícia",
-        "age": 30,
-        "liquid_salary": 1350.0
-    },
-    {
-        "name": "Milena",
-        "age": 21,
-        "liquid_salary": 1296.0
+        "name": "Leandro",
+        "age": 36,
+        "liquid_salary": 1966.8799999999999
     }
 ]

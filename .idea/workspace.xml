@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bc4a01a-e65b-4665-b0f6-931718a446ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/calculadora_salario/models/employee.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculadora_salario/repositories/employee_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculadora_salario/calculadora_salario.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculadora_salario/calculadora_salario.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculadora_salario/calculadora_salario.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculadora_salario/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculadora_salario/mock/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/calculadora_salario/mock/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculadora_salario/services/salary_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculadora_salario/services/salary_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculadora_salario/mock/employees.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +72,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="calculadora_salario" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="aprendizado-python" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,7 +87,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calculadora_salario/calculadora_salario.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calculadora_salario/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -98,7 +98,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.calculadora_salario" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -119,7 +119,7 @@
       <updated>1770130114033</updated>
       <workItem from="1770130115120" duration="5327000" />
       <workItem from="1770143825149" duration="10686000" />
-      <workItem from="1770207230947" duration="7110000" />
+      <workItem from="1770207230947" duration="11642000" />
     </task>
     <servers />
   </component>
@@ -127,7 +127,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/aprendizado_python$calculadora_salario.coverage" NAME="calculadora_salario Coverage Results" MODIFIED="1770213785032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/calculadora_salario" />
+    <SUITE FILE_PATH="coverage/aprendizado_python$calculadora_salario.coverage" NAME="main Coverage Results" MODIFIED="1770217897991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/calculadora_salario" />
     <SUITE FILE_PATH="coverage/aprendizado_python$main.coverage" NAME="main Coverage Results" MODIFIED="1770130473564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aprendizado_python$ex002.coverage" NAME="ex002 Coverage Results" MODIFIED="1770133000375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python-exercicios" />
   </component>
