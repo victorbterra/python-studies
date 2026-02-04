@@ -1,8 +1,8 @@
 class Employee:
-    def __init__(self, name:str, age:int, gross_salary:float):
+    def __init__(self, name:str, age:int, salary:float):
         self.name = name
         self.age = age
-        self.gross_salary = gross_salary
+        self.salary = salary
         self.liquid_salary = self._calc_liquid_salary()
 
     def _calc_liquid_salary(self) -> float:
@@ -10,15 +10,16 @@ class Employee:
         LOW_TAX = 0.10
         HIGH_TAX = 0.20
 
-        if self.gross_salary < ISENTION_LIMIT:
-            return self.gross_salary - (self.gross_salary * LOW_TAX)
+        if self.salary < ISENTION_LIMIT:
+            return self.salary - (self.salary * LOW_TAX)
         else:
-            return self.gross_salary - (self.gross_salary * HIGH_TAX)
+            return self.salary - (self.salary * HIGH_TAX)
 
 
     def toDict(self)->dict:
         return {
             'name':self.name,
             'age':self.age,
+            'salary':self.salary,
             'liquid_salary':self.liquid_salary,
         }

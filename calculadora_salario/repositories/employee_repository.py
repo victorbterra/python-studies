@@ -1,12 +1,12 @@
-import json
 from calculadora_salario.models.employee import Employee
+import sqlite3
 
 class EmployeeRepository:
-    def __init__(self, db_path:str ="./mock/db.json"):
-        self.db_path = db_path
+    def __init__(self):
+        self.db_path = "./database/employees.db"
 
     # metodo para iniciar leitura dos dados do json
-    def _load_file(self):
+    """def _load_file(self):
         try:
             with open(self.db_path, "r") as file:
                 content = json.load(file)
@@ -14,22 +14,31 @@ class EmployeeRepository:
                     return []
                 return content
         except (FileNotFoundError, json.JSONDecodeError):
-            return []
+            return [] """
 
     # metodo para salvar dados dentro do json
     def save(self, employee: Employee) -> list:
-        current_data = self._load_file()
-        current_data.append(employee.toDict())
-        with open(self.db_path, "w") as file:
-            json.dump(current_data, file, indent=4, ensure_ascii=False)
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        sql = """
+              INSERT INTO employees (name,age,salary,liquid_salary) VALUES (?,?,?,?)
+              """
+        cursor.execute(sql, (employee.name, employee.age, employee.salary, employee.liquid_salary))
+        conn.commit()
+        conn.close()
 
     # metodo para listar todos os usuários do json
     def find_all(self) -> list[Employee]:
-        data_dicts = self._load_file()
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT name, age, salary,liquid_salary FROM employees")
+        lines = cursor.fetchall()
+        conn.close()
 
         employees_objects = []
-        for item in data_dicts:
-            emp = Employee(item['name'], item['age'], item['liquid_salary'])
+        for line in lines:
+            emp = Employee(name=line[0],age=line[1], salary=line[2])
             employees_objects.append(emp)
 
         return employees_objects
