@@ -24,10 +24,10 @@ if __name__ == "__main__":
         try:
             gross_salary = float(entry_salary)
             liquid_salary = calc_salary(gross_salary)
-            employees.append(create_user(entry_name, liquid_salary))
+            employees.append(create_user(entry_name, round(liquid_salary ,2)))
 
             with open(data_base, "w") as file:
-                json.dump(employees, file, indent=4)
+                json.dump(employees, file, indent=4, ensure_ascii=False)
 
             print(f"{entry_name}, o seu salário líquido será de: R${liquid_salary:.2f} ")
 
