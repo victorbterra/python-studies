@@ -1,4 +1,4 @@
-from calculadora_salario.models.employee import Employee
+from models.employee import Employee
 import sqlite3
 
 class EmployeeRepository:
