@@ -4,7 +4,7 @@ SALARIO_MINIMO_PISO = 1621
 TETO_SALARIAL = 13054.97
 
 
-class EmployeeSchema(BaseModel):
+class EmployeeDTO(BaseModel):
     name: str = Field(
         min_length=3,
         description='O nome deve ter pelo menos 3 caracteres',

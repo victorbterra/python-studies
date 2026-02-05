@@ -1,17 +1,17 @@
-
 # Ambientes Virtuais
-../.venv/
+.venv/
 venv/
 env/
 
-# Compilados do Python (Lixo de cache)
+# PyCharm e VS Code (Configurações locais não vão pro Git)
+.idea/
+.vscode/
+*.iml
+
+# Python Cache (Lixo compilado)
 __pycache__/
 *.pyc
 
-# Banco de dados local (Geralmente não versionamos o DB real)
+# Banco de Dados
 *.db
 *.sqlite3
-
-# Logs e configurações da IDE
-.vscode/
-.idea/
