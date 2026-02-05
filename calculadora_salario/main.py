@@ -1,6 +1,6 @@
 import os
 from time import sleep
-from schemas.schemas import employee_schema
+from schemas.schemas import EmployeeSchema
 from models.employee import Employee
 from pydantic import ValidationError
 from repositories.employee_repository import EmployeeRepository
@@ -29,7 +29,7 @@ def register_employee(repository: EmployeeRepository):
         entry_salary = input("salário bruto do funcionário:")
 
         #Validação dos dados com o pydantic
-        validate_data = employee_schema(
+        validate_data = EmployeeSchema(
                 name= entry_name,
                 age= entry_age,
                 salary= entry_salary
