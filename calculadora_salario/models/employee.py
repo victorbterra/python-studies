@@ -1,3 +1,5 @@
+
+
 class Employee:
     def __init__(self, name:str, age:int, salary:float):
         self.name = name
