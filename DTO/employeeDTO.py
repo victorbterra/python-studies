@@ -1,4 +1,4 @@
-from pydantic import BaseModel, PositiveFloat, PositiveInt, Field
+from pydantic import BaseModel, Field
 
 SALARIO_MINIMO_PISO = 1621
 TETO_SALARIAL = 13054.97

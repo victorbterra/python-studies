@@ -1,7 +1,7 @@
 
 
 class Employee:
-    def __init__(self, name:str, age:int, salary:float):
+    def __init__(self, name:str, age:int,salary:float):
         self.name = name
         self.age = age
         self.salary = salary
@@ -17,6 +17,12 @@ class Employee:
         else:
             return self.salary - (self.salary * HIGH_TAX)
 
+    def get_bonus(self)->float:
+        return 0.0
+
+    def role(self):
+        return type(self).__name__
+
 
     def toDict(self)->dict:
         return {
@@ -24,4 +30,5 @@ class Employee:
             'age':self.age,
             'salary':self.salary,
             'liquid_salary':self.liquid_salary,
+            'bonus':self.get_bonus()
         }

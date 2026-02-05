@@ -2,8 +2,9 @@ import os
 from time import sleep
 from DTO.employeeDTO import EmployeeDTO
 from models.employee import Employee
-from pydantic import ValidationError
+from models.manager import Manager
 from repositories.employee_repository import EmployeeRepository
+from pydantic import ValidationError
 
 
 def clean_screen():
@@ -34,12 +35,21 @@ def register_employee(repository: EmployeeRepository):
                 age= entry_age,
                 salary= entry_salary
             )
-        #Criação da nova instância para criar um novo usuário
-        new_employee = Employee(name=validate_data.name, age=validate_data.age, salary=validate_data.salary)
+        #Escolha do cargo
+        print("Qual o cargo?")
+        print("1 - Funcionário Comum")
+        print("2 - Gerente")
+        option_role = int(input("Opção: "))
+
+        if option_role == 1:
+            new_employee = Employee(validate_data.name, validate_data.age, validate_data.salary)
+        else:
+            new_employee = Manager(validate_data.name, validate_data.age, validate_data.salary)
+
         #Aplicação da regra de negócios e cria usuário no banco de dados
         repository.save(new_employee)
         #mensagem de sucesso ao usuário !
-        print(f"O funcionário {new_employee.name} foi registrado com sucesso!")
+        print(f"O {new_employee.role()} {new_employee.name} foi registrado com sucesso!")
         sleep(1)
     except ValidationError as error:
         print("Erro de validação: ")
@@ -56,7 +66,7 @@ def list_employees(repository: EmployeeRepository):
         return
     else:
         for employee in employee:
-            print(f"Nome: {employee.name}\nIdade:{employee.age}\nSalário Bruto: R${employee.salary}\nSalário Líquido: R${employee.liquid_salary:.2f}\n=====================")
+            print(f"Nome: {employee.name}\nIdade: {employee.age}\nCargo: {employee.role()}\nBonus: R${employee.get_bonus()}\nSalário Bruto: R${employee.salary}\nSalário Líquido: R${employee.liquid_salary:.2f}\n=====================")
 
 def main ():
     repository = EmployeeRepository()

@@ -13,6 +13,7 @@ def criar_tabela():
         name TEXT NOT NULL,
         age INTEGER NOT NULL,
         salary REAL INTEGER NOT NULL,
+        role TEXT NOT NULL,
         liquid_salary REAL INTEGER NOT NULL
     )
     """
