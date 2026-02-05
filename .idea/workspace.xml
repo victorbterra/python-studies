@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bc4a01a-e65b-4665-b0f6-931718a446ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/calculadora_salario/schemas/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/aprendizado-python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aprendizado-python.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/calculadora_salario/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculadora_salario/database/employees.db" beforeDir="false" afterPath="$PROJECT_DIR$/calculadora_salario/database/employees.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculadora_salario/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculadora_salario/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculadora_salario/models/employee.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculadora_salario/models/employee.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculadora_salario/services/salary_service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculadora_salario/services/user_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculadora_salario/schemas/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculadora_salario/schemas/schemas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +75,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/calculadora_salario" />
       <recent name="$PROJECT_DIR$/calculadora_salario/Mock" />
       <recent name="$PROJECT_DIR$/python-exercicios" />
     </key>
@@ -162,7 +158,7 @@
       <workItem from="1770130115120" duration="5327000" />
       <workItem from="1770143825149" duration="10686000" />
       <workItem from="1770207230947" duration="27456000" />
-      <workItem from="1770295686998" duration="3845000" />
+      <workItem from="1770295686998" duration="4717000" />
     </task>
     <servers />
   </component>
