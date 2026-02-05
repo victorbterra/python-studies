@@ -1,5 +1,9 @@
 from pydantic import BaseModel, PositiveFloat, PositiveInt, Field
 
+SALARIO_MINIMO_PISO = 1621
+TETO_SALARIAL = 13054.97
+
+
 class EmployeeSchema(BaseModel):
     name: str = Field(
         min_length=3,
@@ -10,4 +14,8 @@ class EmployeeSchema(BaseModel):
         le=100,
         description='O funcionário precisa ser maior de idade.',
     )
-    salary: float = PositiveFloat
+    salary: float = Field(
+        ge=SALARIO_MINIMO_PISO,
+        le=TETO_SALARIAL,
+        description=f"Salário entre R${SALARIO_MINIMO_PISO} e R${TETO_SALARIAL}"
+    )
