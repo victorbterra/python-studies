@@ -66,7 +66,49 @@ def list_employees(repository: EmployeeRepository):
         return
     else:
         for employee in employee:
-            print(f"Nome: {employee.name}\nIdade: {employee.age}\nCargo: {employee.role()}\nBonus: R${employee.get_bonus()}\nSalário Bruto: R${employee.salary}\nSalário Líquido: R${employee.liquid_salary:.2f}\n=====================")
+            print(f"ID:{employee.id:<4}\nNOME:{employee.name:<5}\nCARGO:{employee.role:<5}\nSAL.BRUTO:R${employee.salary}\nSAL.LIQUIDO:R${employee.liquid_salary:<7.2f}\nBÔNUS:R${employee.get_bonus()}\n")
+            print("-"* 30)
+
+def delete_employee(repository: EmployeeRepository):
+    list_employees(repository)
+    try:
+        delete_id = int(input("Digite o id do funcionário para excluir: "))
+        employee = repository.find_by_id(delete_id)
+        if not employee:
+            print("Funcionário não encontrado.")
+            return
+        confirm = input(f"Tem certeza que deseja excluir{employee.name}? (S/N):").upper()
+        match confirm:
+            case "S":
+                repository.delete_by_id(delete_id)
+            case "N":
+                print("Operação cancelada!")
+    except ValueError:
+        print("ID inválido!")
+
+def update_employee(repository: EmployeeRepository):
+    list_employees(repository)
+    try:
+        update_id = int(input("\nDigite o ID do funcionário para editar:"))
+        update_employee = repository.find_by_id(update_id)
+        if not update_id:
+            print("Funcionário não encontrado.")
+            return
+        print(f"\n --- EDITANDO:{update_employee.name}")
+        print("Pressione [ENTER] para manter o valor atual")
+
+        new_name = input(f"Digite o nome atualizado:[{update_employee.name}]:")
+        new_age = input(f"Digite a Idade atualizada:[{update_employee.age}]")
+        new_salary = input(f"Digite o salário atualizado:[{update_employee.salary}]")
+
+        if new_name: update_employee.name = new_name
+        if new_age: update_employee.age = new_age
+        if new_salary:
+            update_employee.salary = float(new_salary)
+            update_employee.liquid_salary = update_employee._calc_liquid_salary()
+        repository.save(update_employee)
+    except ValueError:
+        print("Erro de digitação.")
 
 def main ():
     repository = EmployeeRepository()
@@ -74,7 +116,10 @@ def main ():
         header("SISTEMA DE CADASTRO DE FUNCIONÁRIOS")
         print("1. Cadastrar Funcionário")
         print("2. Listar Funcionários")
-        print("3. Sair")
+        print("3. Deletar Funcionario")
+        print("4. Editar Funcionario")
+        print("5. Sair")
+
         print("-" * 40)
         option = input("Escolha uma opção:")
 
@@ -86,6 +131,12 @@ def main ():
                 list_employees(repository)
                 wait_enter()
             case "3":
+                delete_employee(repository)
+                wait_enter()
+            case "4":
+                update_employee(repository)
+                wait_enter()
+            case "5":
                 print("\nSaindo do sistema... Até logo !")
                 break
             case _:

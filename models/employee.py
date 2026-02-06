@@ -1,7 +1,8 @@
 
 
 class Employee:
-    def __init__(self, name:str, age:int,salary:float):
+    def __init__(self, name:str, age:int,salary:float, id:str=None):
+        self.id = id
         self.name = name
         self.age = age
         self.salary = salary
@@ -20,6 +21,7 @@ class Employee:
     def get_bonus(self)->float:
         return 0.0
 
+    @property
     def role(self):
         return type(self).__name__
 
