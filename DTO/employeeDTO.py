@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field
+from typing import Literal
 
 SALARIO_MINIMO_PISO = 1621
 TETO_SALARIAL = 13054.97
@@ -19,3 +20,4 @@ class EmployeeDTO(BaseModel):
         le=TETO_SALARIAL,
         description=f"Salário entre R${SALARIO_MINIMO_PISO} e R${TETO_SALARIAL}"
     )
+    role: Literal["Manager","Employee"] = "Employee"
