@@ -1,6 +1,6 @@
 from fastapi import APIRouter,Depends, HTTPException, status
 from typing import List
-from DTO.employeeDTO import EmployeeDTO
+from DTO.employeeDTO import EmployeeDTO, EmployeeResponseDTO
 from models.employee import Employee
 from models.manager import Manager
 from repositories.employee_repository import EmployeeRepository
@@ -11,22 +11,22 @@ router = APIRouter(prefix="/employees", tags=["Employees"])
 def get_repo():
     return EmployeeRepository()
 
-@router.get("/",response_model=List[EmployeeDTO])
+@router.get("/",response_model=List[EmployeeResponseDTO])
 def list_employees(repo: EmployeeRepository = Depends(get_repo)):
     return repo.find_all()
 
-@router.post("/",status_code=status.HTTP_201_CREATED,response_model=EmployeeDTO)
+@router.post("/",status_code=status.HTTP_201_CREATED,response_model=EmployeeResponseDTO)
 def create_employee(data:EmployeeDTO,repo:EmployeeRepository = Depends(get_repo)):
     if data.role == "Manager":
         new_employee = Manager(name=data.name,age=data.age,salary=data.salary)
     else:
         new_employee = Employee(name=data.name,age=data.age,salary=data.salary)
 
-    repo.save(new_employee)
+    repo.create(new_employee)
     return new_employee
 
-@router.put("/{employee_id}",response_model=EmployeeDTO)
-def update_employee(employee_id:int,data:EmployeeDTO,repo:EmployeeRepository= Depends(get_repo)):
+@router.put("/{employee_id}",response_model=EmployeeResponseDTO)
+def update_employee(employee_id:str,data:EmployeeDTO,repo:EmployeeRepository= Depends(get_repo)):
 
     current_employee = repo.find_by_id(employee_id)
 
@@ -42,12 +42,12 @@ def update_employee(employee_id:int,data:EmployeeDTO,repo:EmployeeRepository= De
     current_employee.liquid_salary = current_employee._calc_liquid_salary()
 
     #salva no banco de dados
-    repo.save(current_employee)
+    repo.update(current_employee)
 
     return current_employee
 
-router.delete("/{employee_id}",status_code=status.HTTP_204_NO_CONTENT)
-def delete_employee(employee_id:int,repo:EmployeeRepository = Depends(get_repo)):
+@router.delete("/{employee_id}",status_code=status.HTTP_204_NO_CONTENT)
+def delete_employee(employee_id:str,repo:EmployeeRepository = Depends(get_repo)):
     #pegando o id do funcionário no banco de dados
     emp = repo.find_by_id(employee_id)
 

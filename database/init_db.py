@@ -1,20 +1,21 @@
 import sqlite3
-import os
-
-DB_PATH = os.path.join(os.path.dirname(__file__), "employees.db")
+from config import DB_PATH
 
 def criar_tabela():
+    print(f"🛠️ Criando/Resetando banco em: {DB_PATH}")
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
+    cursor.execute("DROP TABLE IF EXISTS employees")
+
     sql = """
-    CREATE TABLE IF NOT EXISTS employees (
-        id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    CREATE TABLE employees (
+        id TEXT PRIMARY KEY,
         name TEXT NOT NULL,
         age INTEGER NOT NULL,
-        salary REAL INTEGER NOT NULL,
         role TEXT NOT NULL,
-        liquid_salary REAL INTEGER NOT NULL
+        salary REAL NOT NULL,
+        liquid_salary REAL NOT NULL
     )
     """
 

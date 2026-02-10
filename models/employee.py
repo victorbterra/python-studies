@@ -1,8 +1,8 @@
-
+import uuid
 
 class Employee:
     def __init__(self, name:str, age:int,salary:float, id:str=None):
-        self.id = id
+        self.id = id or str(uuid.uuid4())
         self.name = name
         self.age = age
         self.salary = salary

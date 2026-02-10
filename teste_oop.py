@@ -1,16 +1,23 @@
 from models.employee import Employee
-from models.manager import Manager
+from repositories.employee_repository import EmployeeRepository
 
-func = Employee(name="João", age=20, salary=1700)
+print("1. Instanciando Repositório...")
+repo = EmployeeRepository()
 
-boss = Manager(name="Ana", age=38, salary=5700)
+print("2. Criando Funcionário Falso...")
+# Note o uso de um UUID fixo ou gerado na hora
+emp = Employee(name="Teste Debug", age=30, salary=5000.0)
 
-equipe = [func,boss]
+print(f"3. Tentando Salvar (ID: {emp.id})...")
+try:
+    repo.create(emp)
+    print("✅ Sucesso no Python! Verifique o arquivo do banco agora.")
+except Exception as e:
+    print(f"❌ ERRO AO SALVAR: {e}")
 
-print("=== FOLHA DE BÔNUS ===")
-
-for funcionario in equipe:
-
-    bonus = funcionario.get_bonus()
-    tipo = type(funcionario).__name__
-    print(f"Cargo:{tipo} | Nome:{funcionario.name} | Bonus:{bonus:.2f}")
+print("4. Tentando ler de volta...")
+buscado = repo.find_by_id(emp.id)
+if buscado:
+    print(f"✅ O dado VOLTOU do banco: {buscado.name}")
+else:
+    print("❌ O dado NÃO VOLTOU (Perdido no limbo).")
